@@ -12,24 +12,23 @@ public class Main {
 
         while (i < j) {
 
-            while (i < j &&
-                   !(arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' ||
-                     arr[i] == 'o' || arr[i] == 'u')) {
-                i++;
-            }
+            if ((arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' ||
+                 arr[i] == 'o' || arr[i] == 'u') &&
+                (arr[j] == 'a' || arr[j] == 'e' || arr[j] == 'i' ||
+                 arr[j] == 'o' || arr[j] == 'u')) {
 
-            while (i < j &&
-                   !(arr[j] == 'a' || arr[j] == 'e' || arr[j] == 'i' ||
-                     arr[j] == 'o' || arr[j] == 'u')) {
-                j--;
-            }
-
-            if (i < j) {
                 char temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
 
                 i++;
+                j--;
+            }
+            else if (!(arr[i] == 'a' || arr[i] == 'e' || arr[i] == 'i' ||
+                       arr[i] == 'o' || arr[i] == 'u')) {
+                i++;
+            }
+            else {
                 j--;
             }
         }
